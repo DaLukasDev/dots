@@ -1,0 +1,39 @@
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+    excludesfile = ~/.gitignore
+    editor = nvim
+    filemode = false
+    pager = delta
+
+[branch]
+    autosetupmerge = always
+
+[push]
+    default = matching
+
+[alias]
+    nah = "!f(){ git reset --hard; git clean -df; if [ -d \".git/rebase-apply\" ] || [ -d \".git/rebase-merge\" ]; then git rebase --abort; fi; }; f"
+    remove = !git ls-files --deleted -z | xargs -0 git rm
+    up = pull --rebase
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    s = status -sb
+
+[init]
+    defaultBranch = main
+
+[pull]
+    ff = only
+
+[gpg]
+    program = gpg2
+
+[commit]
+    gpgsign = true
+
+[fetch]
+    prune = true
+
+[tag]
+    forceSignAnnotated = true

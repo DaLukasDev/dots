@@ -1,0 +1,4 @@
+export LOKALHOST_PATH=~/lokal.host
+export DLLOCAL_PATH=~/rqc.icu
+export LOKALHOST_IP=172.17.0.1
+export DLLOCAL_IP=172.17.0.1

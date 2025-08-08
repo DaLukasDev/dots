@@ -1,0 +1,11 @@
+alias cleanlocal="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+alias gc="git add . --all && gitmoji -c"
+alias gcs="gitmoji -c"
+alias setscreens="~/.dotfiles/scripts/sethomelayout.sh"
+alias stackswap="~/.dotfiles/scripts/stackswapper.sh"
+alias npm-update='f() { npm outdated --json | jq -r '"'"'keys[]'"'"' | grep "$1" | xargs npm update --save; }; f'
+alias fix-colima="cd ~/.colima/_lima/_networks && rm -rf ./user-v2"
+alias gbn="git checkout -b"
+alias vim=nvim
+alias ls='ls --color=auto'
+alias ll='ls -al'
