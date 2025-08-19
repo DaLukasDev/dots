@@ -47,7 +47,13 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Completion styling
-eval "$(dircolors -b)"
+if command -v dircolors &> /dev/null; then
+  #unix
+  eval "$(dircolors -b)"
+elif command -v gdircolors &> /dev/null; then
+  #macos, requires coreutils
+  eval "$(gdircolors -b)"
+fi
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
