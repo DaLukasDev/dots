@@ -2,3 +2,4 @@ theme = vesper
 font-family = "Geist mono"
 font-thicken = true
 copy-on-select = clipboard
+keybind = cmd+b=text:\x02

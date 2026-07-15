@@ -1,0 +1,2 @@
+scripts/tmux/*
+!scripts/tmux/.gitkeep

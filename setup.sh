@@ -17,6 +17,7 @@ bitwarden
 docker-compose
 whatsapp
 nvm
+tmux
 fzf
 zoxide
 docker
@@ -112,7 +113,7 @@ if [ "$PKG_MANAGER" = "apt" ]; then
 
     export DEBIAN_FRONTEND=noninteractive
     sudo apt update
-    sudo apt install -y zsh git ca-certificates curl wget gpg apt-transport-https fzf zoxide stow
+    sudo apt install -y zsh git ca-certificates curl wget gpg apt-transport-https fzf zoxide stow tmux
     sudo install -m 0755 -d /etc/apt/keyrings
     sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
     sudo chmod a+r /etc/apt/keyrings/docker.asc
@@ -156,7 +157,7 @@ EOF
     fi
 
 elif [ "$PKG_MANAGER" = "pacman" ]; then
-    sudo pacman -Sy --noconfirm --needed base-devel zsh git docker docker-compose fzf zoxide
+    sudo pacman -Sy --noconfirm --needed base-devel zsh git docker docker-compose fzf zoxide tmux
     git clone https://aur.archlinux.org/paru.git
     cd paru
     makepkg -si
@@ -179,7 +180,7 @@ elif [ "$PKG_MANAGER" = "brew" ]; then
     echo '---------------------'
     sh $WORKING_DIR/macos/set-defaults.sh
 elif [ "$PKG_MANAGER" = "apk" ]; then
-    apk add --no-cache bash zsh git docker docker-compose doas shadow curl fzf zoxide stow
+    apk add --no-cache bash zsh git docker docker-compose doas shadow curl fzf zoxide stow tmux
     curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
