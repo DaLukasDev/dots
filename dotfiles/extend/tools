@@ -3,3 +3,8 @@ source <(fzf --zsh)
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/Users/lukas/.bun/_bun" ] && source "/Users/lukas/.bun/_bun"
+
+source ~/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
